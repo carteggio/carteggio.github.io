@@ -97,7 +97,116 @@
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Developers wanted!</h2>
-                    <p class="lead">Carteggio is an open source community project in an early stage. With the current code you can already send and receive messages but many bugs are present and many features are missing. The code is so unstable that it could delete your mailbox or do some other nasty things. For this reason we don't publish yet binaries. <b>If you are a developer, you are excited by our approach to mobile messaging join our team!</b></p>
+                    <p class="lead">Carteggio is an open source community project at an early stage. With the current code you can already send and receive messages but many bugs are present and many features are missing. <b>If you are a developer, you are excited by our approach to mobile messaging join our team!</b></p>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+    <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Questions and Answers</h2>
+
+<h3>What is Carteggio?</h3>
+
+
+<p>Carteggio is a mobile messaging app. Its user interface is designed around conversations. It is possible to create a conversation with another user or a a set of users. Once the conversation is started it is possible to exchange short messages or pictures. The users participating in the conversation do not need to be online at the same time. The application takes care of storing outgoing and incoming messages in the cloud so that even if two users are never online at the same time they can still carry out a conversation. Users can track the delivery status of each individual message sent in the conversation: It is possible to know that a message has been delivered to the cloud and that it has been displayed on the recipient's phone.</p>
+
+
+<h3>Can I use Carteggio safely?</h3>
+
+
+<p>Carteggio is still at a very early stage. It contains many bugs and many features are unfinished. You can test it but, among other things, it risks to destroy the mailboxes it is connected to and to use an excessive amount of internet data and battery. Moreover it may contain serious security and safety bugs. Until an independent code review will be done you should not trust it for critical communications.</p>
+
+
+<h3>How do I install Carteggio on my phone?</h3>
+
+
+<p>Carteggio is distributed in source code format only because it is still unstable. To install it on your phone you need to download the source code and compile it with the Android SDK available for free from Google. We will provide a easier way to install the program once a minimal level of stability is reached.</p>
+
+
+<h3>How Carteggio conversations are exchanged?</h3>
+
+
+<p>To transfer messages Carteggio uses standard email protocols: SMTP and IMAP. When Alice writes a message to Bob the message is first stored locally on Alice's phone and marked as “waiting to be sent”. When an internet connection is available the application delivers all the messages marked as waiting to be sent to the Alice SMTP server. Once Alice's SMTP server confirms reception these messages are marked as “waiting receipt”.</p>
+
+
+<p>Alice's SMTP server takes then care of delivering the message to Bob's mailbox in the same way usual mail is delivered. Bob's phone monitors its mailbox using IMAP IDLE. When a message is received Bob's IMAP server sends a notification to the application that can then fetch the message and notify the Bob. A copy of the message is stored locally on Bob's phone and the original is moved from the IMAP inbox to a special IMAP folder.</p>
+
+
+<p>The message has been displayed on the screen of Bob device it is marked as “waiting to send receipt” and at the next opportunity the application will send a standard email receipt using the Bob's SMTP server. Once Bob's SMTP server confirms it has received the receipt, the message is marked as “receipt sent”. The receipt is then transferred to Alice's mailbox and received in the same way using IMAP IDLE. Once the receipt is received on Alice's phone the message is marked as “delivered”.</p>
+
+
+<h3>Does Carteggio guarantee my privacy?</h3>
+
+
+<p>The Carteggio application itself doesn't send personal data to third parties. If you want verify this you can download the source code and read it.</p>
+
+
+<p>Carteggio can guarantee different levels of security of the communication based on how it is configured and used. Keep in mind that security of communication requires both sender and receiver to contribute. If the receiver is not using the app in a secure way not amount of work on the sender side will help.</p>
+
+
+<p>The content of the communication between the app and the IMAP and SMTP servers can be easily secured by configuring the app to use SSL connections. Notice that some information such as the fact that Carteggio is being used on the device and the timing of incoming and outgoing messages are still not protected from a wiretapper.</p>
+
+
+<p>Right now Carteggio doesn't protect the content of messages and their metadata against eavesdropping by the sender and recipient servers. It is the tasks of the user to choose providers that guarantee their privacy. We plan to extend Carteggio to at least protect the content of the messages in the near future but this will not protect message metadata. Working with a reputable server provider will still be important.</p>
+
+
+<p>Communication between sender and receiver servers may be secured using SMTP over TLS, this has to be supported by both sender and receiver servers. You can verify this with you server provider. If this protection is enabled and the servers a sufficient number of users that exchange messages this also ensures that a third party that is intercepting the server-to-server traffic cannot detect that two specific users are communicating. Communications between users on the same server are usually more secure because the traffic never leaves the server operator network.</p>
+
+
+<p>Carteggio can be in principle used with FreeMail, an email server that works over Freenet. Using this approach brings stronger privacy guarantees but it will prevent communication with non-FreeMail users.</p>
+
+
+<h3>Is Carteggio usage of email compatible with other email clients?</h3>
+
+
+<p>Carteggio smoothly interoperates with other mail clients. The application doesn't process all incoming mail in the mailbox it is configured to use, it only processes messages that have a special header or that are answers to previous conversation messages. This allows Carteggio to use co-exist with other mail clients that are using the same mailbox. Carteggio messages and receipts are fully compatible with a normal mail clients. Moreover if a user answers to a Carteggio generated message using a normal mail client the message will be correctly delivered to the corresponding conversation.</p>
+
+
+<h3>What are the advantages of Carteggio compared to SMS/MMS?</h3>
+
+
+<p>Carteggio approach to mobile messaging is very similar to SMS/MMS, but it has a critical advantage: it works even if the cellular network is not available. You can use Carteggio on a tablet without cellular subscription, you can use Carteggio when connected to a WiFi network when you are abroad or in a place with no cellular coverage such as a mountain hut or your office at the 64th floor of a skyscraper (or in the basement).</p>
+
+
+<p>Another big advantage of Carteggio compared to SMS/MMS is cost. Carteggio uses a very little amount of internet data which is well within the monthly cap of normal subscriptions common among smartphone users: No need to pay extra for SMS. Moreover Carteggio works over WiFi connections so even if you are abroad and do not want to pay roaming charges you can still receive and send messages.</p>
+
+
+<p>Another important advantage is that with Carteggio the communication can be encrypted to prevent your phone operator from tracking who you are communicating with and what is the content of your communications. This is particularly interesting in countries where there is a lack of strong privacy protection laws.</p>
+
+
+<h3>What are the advantages of Carteggio compared to Email clients?</h3>
+
+
+<p>Carteggio is email. The main reason to use Carteggio instead of another mail client is the conversation-centric UI that is more suitable for some type of communications. Ideally every mail client in the future will have a “Carteggio-style” view and Carteggio itself will become useless.</p>
+
+
+<h3>What are the advantages of Carteggio compared to XMPP clients?</h3>
+
+
+<p>Carteggio can handle semi-synchronous conversations that span multiple days and the participants may never be online at the same time, to do this it uses the well understood offline messaging capabilities embedded in the email infrastructure. In contrast XMPP support for offline messaging is very limited and not widely used. Moreover few users have XMPP accounts, while almost everybody that is on the internet has an email account.</p>
+
+
+<h3>What are the advantages of Carteggio compared to iMessage, WhatsApp, Viber, Google Hangout, etc. ?</h3>
+
+
+<p>All those services leak private information about you to companies whose business model is to sell this data to the best bidder. Even if with some services the communication is encrypted, the source and destination of the communication are in the clear. Would you like health insurance companies to know that you have been communicating with a drug abuse help service when you negotiating prices? Would you like all airline companies to know that have been communicating with a conference venue at location X when you are trying to buy an airline ticket for X? Would you like that in the next job interview the person in front of you knows all political and religious related contacts you had in the last 20 years?</p>
+
+
+<p>With Carteggio you are in control of who should be the server that handles the messages for you. Already today you can choose to entrust your communications to service providers that are willing to accept your money in exchange of guaranteeing you privacy. You can choose these providers in jurisdictions that enforce strict privacy laws. You can run your own servers.</p>
+
+
                 </div>
             </div>
 
