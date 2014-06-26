@@ -8,14 +8,22 @@ body, h1, h2, h3, h4, h5, h6 {
 	font-weight: 700;
 }
 
-p {
-	font-weight: 400;
+#qa p {
+	font-weight: 300;
+	font-size: 18px;
+}
+
+h3 {
+	margin-bottom: 10px;
+	font-size: 20px;
 }
 
 .lead {
 	font-size: 18px;
-	font-weight: 400;
+	font-weight: 300;
 }
+
+
 
 .intro-header {
 	padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */

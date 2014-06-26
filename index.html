@@ -107,7 +107,7 @@
     </div>
     <!-- /.content-section-a -->
 
-    <div class="content-section-b">
+    <div class="content-section-b" id="qa">
 
         <div class="container">
 
@@ -116,26 +116,25 @@
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Questions and Answers</h2>
+		</div>
+	     </div>
 
+<div class="row">
+<div class="col-lg-6">
 <h3>What is Carteggio?</h3>
-
 
 <p>Carteggio is a mobile messaging app. Its user interface is designed around conversations. It is possible to create a conversation with another user or a a set of users. Once the conversation is started it is possible to exchange short messages or pictures. The users participating in the conversation do not need to be online at the same time. The application takes care of storing outgoing and incoming messages in the cloud so that even if two users are never online at the same time they can still carry out a conversation. Users can track the delivery status of each individual message sent in the conversation: It is possible to know that a message has been delivered to the cloud and that it has been displayed on the recipient's phone.</p>
 
+<h3>Is Carteggio ready to be used?</h3>
 
-<h3>Can I use Carteggio safely?</h3>
-
-
-<p>Carteggio is still at a very early stage. It contains many bugs and many features are unfinished. You can test it but, among other things, it risks to destroy the mailboxes it is connected to and to use an excessive amount of internet data and battery. Moreover it may contain serious security and safety bugs. Until an independent code review will be done you should not trust it for critical communications.</p>
-
+<p>Carteggio already implements all basic functionalities but it is still at a very early stage. It contains many bugs and many features are unfinished. You can test it but, among other things, it risks to destroy the mailboxes it is connected to and to use an excessive amount of internet data and battery. Moreover it may contain serious security and safety bugs. Until an independent code review will be done you should not trust it for critical communications.</p>
 
 <h3>How do I install Carteggio on my phone?</h3>
 
 
 <p>Carteggio is distributed in source code format only because it is still unstable. To install it on your phone you need to download the source code and compile it with the Android SDK available for free from Google. We will provide a easier way to install the program once a minimal level of stability is reached.</p>
 
-
-<h3>How Carteggio conversations are exchanged?</h3>
+<h3>How does Carteggio work?</h3>
 
 
 <p>To transfer messages Carteggio uses standard email protocols: SMTP and IMAP. When Alice writes a message to Bob the message is first stored locally on Alice's phone and marked as “waiting to be sent”. When an internet connection is available the application delivers all the messages marked as waiting to be sent to the Alice SMTP server. Once Alice's SMTP server confirms reception these messages are marked as “waiting receipt”.</p>
@@ -147,7 +146,13 @@
 <p>The message has been displayed on the screen of Bob device it is marked as “waiting to send receipt” and at the next opportunity the application will send a standard email receipt using the Bob's SMTP server. Once Bob's SMTP server confirms it has received the receipt, the message is marked as “receipt sent”. The receipt is then transferred to Alice's mailbox and received in the same way using IMAP IDLE. Once the receipt is received on Alice's phone the message is marked as “delivered”.</p>
 
 
-<h3>Does Carteggio guarantee my privacy?</h3>
+<h3>Is Carteggio usage of email compatible with other email clients?</h3>
+
+
+<p>Carteggio smoothly interoperates with other mail clients. The application doesn't process all incoming mail in the mailbox it is configured to use, it only processes messages that have a special header or that are answers to previous conversation messages. This allows Carteggio to use co-exist with other mail clients that are using the same mailbox. Carteggio messages and receipts are fully compatible with a normal mail clients. Moreover if a user answers to a Carteggio generated message using a normal mail client the message will be correctly delivered to the corresponding conversation.</p>
+
+
+<h3>Does Carteggio respect my privacy?</h3>
 
 
 <p>The Carteggio application itself doesn't send personal data to third parties. If you want verify this you can download the source code and read it.</p>
@@ -163,16 +168,8 @@
 
 
 <p>Communication between sender and receiver servers may be secured using SMTP over TLS, this has to be supported by both sender and receiver servers. You can verify this with you server provider. If this protection is enabled and the servers a sufficient number of users that exchange messages this also ensures that a third party that is intercepting the server-to-server traffic cannot detect that two specific users are communicating. Communications between users on the same server are usually more secure because the traffic never leaves the server operator network.</p>
-
-
-<p>Carteggio can be in principle used with FreeMail, an email server that works over Freenet. Using this approach brings stronger privacy guarantees but it will prevent communication with non-FreeMail users.</p>
-
-
-<h3>Is Carteggio usage of email compatible with other email clients?</h3>
-
-
-<p>Carteggio smoothly interoperates with other mail clients. The application doesn't process all incoming mail in the mailbox it is configured to use, it only processes messages that have a special header or that are answers to previous conversation messages. This allows Carteggio to use co-exist with other mail clients that are using the same mailbox. Carteggio messages and receipts are fully compatible with a normal mail clients. Moreover if a user answers to a Carteggio generated message using a normal mail client the message will be correctly delivered to the corresponding conversation.</p>
-
+</div>
+<div class="col-lg-6">
 
 <h3>What are the advantages of Carteggio compared to SMS/MMS?</h3>
 
@@ -201,11 +198,13 @@
 <h3>What are the advantages of Carteggio compared to iMessage, WhatsApp, Viber, Google Hangout, etc. ?</h3>
 
 
-<p>All those services leak private information about you to companies whose business model is to sell this data to the best bidder. Even if with some services the communication is encrypted, the source and destination of the communication are in the clear. Would you like health insurance companies to know that you have been communicating with a drug abuse help service when you negotiating prices? Would you like all airline companies to know that have been communicating with a conference venue at location X when you are trying to buy an airline ticket for X? Would you like that in the next job interview the person in front of you knows all political and religious related contacts you had in the last 20 years?</p>
+<p>All those services leak private information about you to companies whose business model is to sell this data to the best bidder. Even if with some services the communication is encrypted, the source and destination of the communication are in the clear. Would you like health insurance companies to know that you have been communicating with a rare disease helpline when you negotiating prices? Would you like all airline companies to know that have been communicating with a conference venue at location X when you are trying to buy an airline ticket for X? Would you like that in the next job interview the person in front of you knows all political and religious related contacts you had in the last 20 years?</p>
 
 
 <p>With Carteggio you are in control of who should be the server that handles the messages for you. Already today you can choose to entrust your communications to service providers that are willing to accept your money in exchange of guaranteeing you privacy. You can choose these providers in jurisdictions that enforce strict privacy laws. You can run your own servers.</p>
 
+</div>
+</div>
 
                 </div>
             </div>
