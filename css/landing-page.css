@@ -26,7 +26,7 @@ h3 {
 
 
 .intro-header {
-	padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+	padding-top: 20px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
 	padding-bottom: 50px;
 	color: #f8f8f8;
 	background: url(../img/intro-bg.jpg) no-repeat center center;
@@ -36,8 +36,8 @@ h3 {
 
 .intro-message {
 	position: relative;
-	padding-top: 20%;
-	padding-bottom: 20%;
+	padding-top: 15%;
+	padding-bottom: 10%;
 }
 
 .intro-message > h1 {
@@ -54,6 +54,17 @@ h3 {
 
 .intro-message > h3 {
 	text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.intro-long {
+    margin: 0 auto;
+    max-width: 600px;
+    font-size: 130%;
+    padding-bottom: 30px;
+}
+
+.intro-long-lead {
+    font-size: 140%;
 }
 
 @media (max-width: 767px) {
